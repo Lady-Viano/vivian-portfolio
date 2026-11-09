@@ -25,11 +25,11 @@ export default function GraphicsGrid() {
               {p.images.slice(0, 2).map((img, i) => (
                 <div
                   key={img.src}
-                  className={`relative aspect-[510/716] w-[40%] overflow-hidden rounded-[12px] shadow-[0_10px_30px_-12px_rgba(0,0,0,0.35)] transition-transform duration-500 ${
+                  className={`relative aspect-[254/358] w-[40%] drop-shadow-[0_10px_18px_rgba(0,0,0,0.22)] transition-transform duration-500 ${
                     i === 0 ? "-rotate-3 group-hover:-rotate-6" : "rotate-3 group-hover:rotate-6"
                   }`}
                 >
-                  <Image src={img.src} alt="" fill sizes="(min-width: 768px) 220px, 40vw" className="object-cover" />
+                  <Image src={img.src} alt="" fill sizes="(min-width: 768px) 220px, 40vw" className="object-contain" />
                 </div>
               ))}
             </div>

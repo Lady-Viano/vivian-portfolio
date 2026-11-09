@@ -40,14 +40,14 @@ export default function GraphicProjectContent({
         className="no-scrollbar -mx-5 mt-12 flex cursor-grab snap-x snap-mandatory scroll-pl-5 gap-[44px] overflow-x-auto px-5 select-none sm:scroll-pl-[22px] active:cursor-grabbing sm:mx-0 sm:pl-[22px] sm:pr-0"
       >
         {project.images.map((img) => (
-          <div key={img.src} className="relative aspect-[510/716] w-[220px] shrink-0 snap-start overflow-hidden rounded-[18px] sm:w-[255px]">
+          <div key={img.src} className="relative aspect-[254/358] w-[220px] shrink-0 snap-start sm:w-[255px]">
             <Image
               src={img.src}
               alt={img.alt}
               fill
               draggable={false}
               sizes="255px"
-              className="object-cover object-left"
+              className="object-contain"
             />
           </div>
         ))}

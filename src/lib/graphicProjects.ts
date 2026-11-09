@@ -12,12 +12,49 @@ export type GraphicProject = {
   images: { src: string; alt: string }[];
 };
 
+// Images live in public/images/graphics/<slug>/01.png, 02.png, … in carousel order.
 const pieces = (slug: string, alts: string[]) =>
-  alts.map((alt, i) => ({ src: `/images/graphics/${slug}/${i + 1}.jpg`, alt }));
+  alts.map((alt, i) => ({ src: `/images/graphics/${slug}/${String(i + 1).padStart(2, "0")}.png`, alt }));
 
 const swipe = "Swipe through and enjoy a closer look at some of the designs I've worked on.";
 
 export const graphicProjects: GraphicProject[] = [
+  {
+    slug: "sentinel",
+    title: "Sentinel GRC Advisory",
+    shortName: "Sentinel",
+    subtitle: "Graphic Designer & Brand Designer . 2026",
+    tags: ["Social Media Graphics", "Educational Carousels", "Brand Design", "Marketing materials"],
+    // DRAFT: written in the style of the other entries; Vivian should review.
+    description: `I've worked on a wide range of designs for Sentinel GRC Advisory, from educational carousels on governance, risk and compliance to service flyers, campaign graphics and seasonal posts. I enjoyed finding ways to make complex topics feel clear and approachable, while keeping every design true to the brand's trusted, professional identity.\n\n${swipe}`,
+    bg: "#e4e8f0",
+    images: pieces("sentinel", [
+      "Happy New Month, welcome to April 2026",
+      "Happy Children's Day",
+      "Offering our services to the first 5 companies",
+      "High-level GRC advisory shouldn't be reserved for only the Big 4 budgets",
+      "Happy New Month, welcome to June",
+      "The cost of moving fast and breaking things has never been higher",
+      "Your trusted partner in governance, risk and compliance",
+      "The Sentinel 5: building the future of governance together",
+      "What we offer",
+      "NADDC's digital dealer portal is live",
+      "Risk assessment and management",
+      "The penalty for default",
+      "Data protection and privacy: NDPC / GDPR readiness",
+      "Sentinel GRC Advisory consultancy",
+      "About the Sentinel GRC Advisory founding team",
+      "Don't wait for a notice from the NDPC before prioritizing GRC",
+      "Why this matters for Nigerian businesses",
+      "Launching soon, 13.06.2026",
+      "HealthTech: a data leak is a violation of patient trust",
+      "You don't need a breach to get fined",
+      "That compliance manual on your shelf won't protect you",
+      "Governance: who is liable when things go wrong?",
+      "Why does GRC advisory often fail at the implementation stage?",
+      "Hello September, happy new month",
+    ]),
+  },
   {
     slug: "farmsabi",
     title: "FarmSabi",
@@ -26,7 +63,20 @@ export const graphicProjects: GraphicProject[] = [
     tags: ["Brand Design", "Social Media Graphics", "Educational Carousels", "Marketing materials", "Awareness Campaigns"],
     description: `I got to work on different designs for FarmSabi, from educational and awareness flyers to their brand vision and mission flyers. I enjoyed finding creative ways to share useful information, tell people more about the brand, and make each design easy and interesting to engage with.\n\n${swipe}`,
     bg: "#e2ebe3",
-    images: pieces("farmsabi", ["FarmSabi coming soon flyer", "5 ways technology is transforming agriculture carousel", "FarmSabi mission flyer"]),
+    images: pieces("farmsabi", [
+      "FarmSabi coming soon",
+      "5 ways technology is transforming agriculture",
+      "FarmSabi mission",
+      "Traditional farming vs smart farming",
+      "Common mistakes farmers make that reduce productivity",
+      "Which of these mistakes do you think is most common?",
+      "What we do at FarmSabi",
+      "If our brand was a person",
+      "Productivity: traditional vs smart farming",
+      "FarmSabi vision",
+      "Did you know? Water use in agriculture",
+      "Poor farming planning",
+    ]),
   },
   {
     slug: "eoti",
@@ -36,7 +86,29 @@ export const graphicProjects: GraphicProject[] = [
     tags: ["Event Flyers", "Social Media Graphics", "Brouchures", "Marketing materials"],
     description: `I had the opportunity to create different designs for EOTI, helping to share information about its activities, events, and programmes. From event flyers to promotional graphics, I enjoyed turning ideas and messages into visuals that catch people's attention and make them want to know more.\n\n${swipe}`,
     bg: "#eeeae2",
-    images: pieces("eoti", ["EOTI first anniversary celebration flyer", "EOTI happy new year 2026 flyer", "EOTI children's day flyer"]),
+    images: pieces("eoti", [
+      "1st anniversary celebration",
+      "Happy New Year 2026",
+      "Happy Children's Day",
+      "Inaugural episode of the EOTI podcast series",
+      "Good Friday",
+      "Demystifying withholding tax in Nigeria webinar",
+      "End of the year virtual hangout",
+      "Merry Christmas",
+      "Delmas v FIRS: international shipping taxes in Nigeria",
+      "Meet our team (mentors)",
+      "Happy International Workers' Day",
+      "EOTI webinar countdown",
+      "Thursday tax questions and answers",
+      "EOTI knowledge sharing sessions",
+      "Thursday Q&A: ask anything tax",
+      "International Chess Day",
+      "Happy Mother's Day",
+      "Tuesday tax trivia",
+      "The impact of black tax on economic development",
+      "Holy Saturday",
+      "Happy Children's Day, 27 May 2026",
+    ]),
   },
   {
     slug: "hergrc",
@@ -46,7 +118,20 @@ export const graphicProjects: GraphicProject[] = [
     tags: ["Brand Identity", "Event Flyers", "Educational Carousels", "Promotional materials"],
     description: `I had the opportunity to give HerGRC Circle a visual identity through its logo and branding, while also creating designs for its activities and community. From event flyers for social media to educational materials, I enjoyed finding creative ways to bring the brand to life and share information with its audience.\n\n${swipe}`,
     bg: "#eeeded",
-    images: pieces("hergrc", ["Empowering women in cybersecurity flyer", "ICDFA women's governance, risk and compliance club executives flyer", "HerGRC Circle ice breaker event flyer"]),
+    images: pieces("hergrc", [
+      "Empowering women in cybersecurity, one GRC step at a time",
+      "ICDFA Women's Governance, Risk & Compliance Club executives",
+      "HerGRC ice breaker",
+      "Wednesday voice of the week",
+      "New week start with HerGRC",
+      "GRC voices: the ones before",
+      "Breach brief: Farmers Insurance",
+      "GRC voices: Victoria Guillot",
+      "Emotional intelligence at the workplace",
+      "Women in cybersecurity GRC: learn, launch and lead",
+      "Inside GRC: put people first",
+      "Key takeaways for She Secures",
+    ]),
   },
   {
     slug: "flyers",
@@ -57,7 +142,16 @@ export const graphicProjects: GraphicProject[] = [
     description:
       "Over time, I've had the chance to work on different flyer designs for individuals and businesses, each with its own idea and purpose. From promoting products and services to announcing events and sharing information, I enjoy exploring different styles and finding the right way to bring each idea to life.\n\nSwipe through and enjoy a closer look at some of the designs I've created for different clients.",
     bg: "#f9eeea",
-    images: pieces("flyers", ["KC Fresh Laundry subscription plans flyer", "By Oma personal brand flyer", "Dafsah Legal Advisory services flyer"]),
+    images: pieces("flyers", [
+      "KC Fresh Laundry subscription plans",
+      "By Oma personal brand flyer",
+      "Dafsah Legal Advisory services",
+      "Meet the team: Reminiscing with Adunni Alaafo",
+      "Exit of a patriarch funeral announcement",
+      "KC Fresh Laundry square flyer",
+      "Viano graphic and UI/UX design services",
+      "Call to Bar ceremony of Stanley Chibuzo Obidiegwu",
+    ]),
   },
   {
     slug: "social-media",
@@ -68,7 +162,23 @@ export const graphicProjects: GraphicProject[] = [
     description:
       "I've created different social media designs to help brands and businesses share their ideas, connect with their audience, and keep their pages visually engaging. I enjoy playing around with layouts, colours, and typography to give each design its own look while making sure the message stands out.\n\nSwipe through and enjoy a closer look at some of the social media designs I've worked on.",
     bg: "#ebebe6",
-    images: pieces("social-media", ["Cometstar Eid al-Adha greeting", "50 days of consistency post", "OneStopSub data and airtime promo"]),
+    images: pieces("social-media", [
+      "Cometstar Happy Eid al-Adha",
+      "50 days of consistency",
+      "OneStopSub: slash your bills, not your wallet",
+      "Beauty in Braids promo",
+      "Cometstar Happy Children's Day",
+      "OneStopSub: Dey play!",
+      "SapiensCopy Merry Christmas",
+      "OneStopSub: top up, spend less",
+      "Cometstar Happy Independence Day",
+      "Book cover: The Nigerian Small Business Tax Handbook",
+      "Call to Bar ceremony of S. A. Ajani",
+      "Boost your brand with VianoGrafix",
+      "Vianoprime welcome to 2024",
+      "Vee's Cuisine: savor and save time",
+      "Happy birthday Emma",
+    ]),
   },
   {
     slug: "logos",
@@ -79,7 +189,17 @@ export const graphicProjects: GraphicProject[] = [
     description:
       "Over time, I've worked on different logo concepts for various projects, exploring shapes, colours, and typography to bring each idea to life. Every project comes with a different story, and I enjoy finding a visual direction that feels right for it.\n\nSwipe through and enjoy a closer look at some of the logos I've designed.",
     bg: "#f0e1e4",
-    images: pieces("logos", ["Chuks Kitchen logo", "Vee's Cuisine logo", "Viano logo"]),
+    images: pieces("logos", [
+      "Chuks Kitchen logo on orange",
+      "Vee's Cuisine logo",
+      "Viano logo",
+      "Dafsah Legal Advisory logo",
+      "FarmSabi logo",
+      "HerGRC Circle logo",
+      "iStopSub logo",
+      "Shift-Swap logo",
+      "Chuks Kitchen logo",
+    ]),
   },
   {
     slug: "business-cards",
@@ -90,7 +210,15 @@ export const graphicProjects: GraphicProject[] = [
     description:
       "I've had the opportunity to work on business card designs for different individuals and brands. I enjoy finding simple but thoughtful ways to bring the details together, from typography and colours to the overall layout, so each card feels professional and reflects the person or brand behind it.\n\nSwipe through and take a closer look at some of the business card designs I've created.",
     bg: "#f2f2db",
-    images: pieces("business-cards", ["Techbrandex Energy business card front", "Techbrandex Energy business card back", "Sentinel GRC Advisory business card"]),
+    images: pieces("business-cards", [
+      "Techbrandex Energy business card front",
+      "Techbrandex Energy business card back",
+      "Sentinel GRC Advisory business card front",
+      "Sentinel GRC Advisory business card back",
+      "TONcoin Thrifty business card front",
+      "TONcoin Thrifty business card back",
+      "Vivian Obidiegwu business card",
+    ]),
   },
   {
     slug: "mockups",
@@ -101,6 +229,17 @@ export const graphicProjects: GraphicProject[] = [
     description:
       "I enjoy seeing a design come to life beyond the screen, and mockups are a great way to do that. I've created different mockups to showcase my work, explore how designs look in real-life settings, and give each project a more complete presentation.\n\nSwipe through and take a closer look at some of the mockups I've created.",
     bg: "#e8e6e0",
-    images: pieces("mockups", ["The Nigerian Small Business Tax Handbook book mockup", "Talent Flow laptop and phone mockup", "Minzo tablet mockup"]),
+    images: pieces("mockups", [
+      "The Nigerian Small Business Tax Handbook book mockup",
+      "Talent Flow laptop and phone mockup",
+      "Minzo tablet mockup, coming soon",
+      "Tax handbook stacked book mockup",
+      "Chuks Kitchen phone mockup",
+      "FarmSabi social media collage mockup",
+      "Book cover mockup with phone",
+      "Logo collection mockup",
+      "Sentinel social media collage mockup",
+      "Book cover mockup with pen",
+    ]),
   },
 ];

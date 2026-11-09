@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-serif: var(--font-roboto-serif);
+  --font-display: var(--font-fraunces);
+  --font-script: var(--font-italianno);
+
+  --color-page: #faf9f7;
+  --color-mist: #ebe8ea;
+  --color-ink: #141414;
+  --color-ink-soft: #3d3a40;
+  --color-line: #e3e3e1;
+  --color-chip-border: #d6d3d6;
+
+  --color-brand: #8b6fb3;
+  --color-brand-dark: #76599f;
+  --color-brand-deep: #4a3d5d;
+  --color-accent: #8e48c0;
+  --color-tag: #f0edf1;
+  --color-tag-ink: #6e5a85;
+  --color-icon-bg: #f1eef2;
+
+  --color-card-rose: #ebdede;
+  --color-card-blue: #dfe1eb;
+  --color-card-sage: #ebeae0;
+  --color-card-sand: #f0e1c8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.name-gradient {
+  background: linear-gradient(90deg, #9045c4 0%, #6b4c8c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Soft diagonal ribbons behind the hero */
+.hero-ribbons {
+  background-color: var(--color-page);
+  background-image:
+    linear-gradient(
+      62deg,
+      transparent 0 18%,
+      rgba(255, 255, 255, 0.55) 18% 27%,
+      transparent 27% 100%
+    ),
+    linear-gradient(
+      118deg,
+      transparent 0 52%,
+      rgba(255, 255, 255, 0.55) 52% 60%,
+      transparent 60% 100%
+    ),
+    linear-gradient(
+      62deg,
+      transparent 0 70%,
+      rgba(255, 255, 255, 0.45) 70% 78%,
+      transparent 78% 100%
+    ),
+    linear-gradient(
+      118deg,
+      transparent 0 8%,
+      rgba(255, 255, 255, 0.4) 8% 14%,
+      transparent 14% 100%
+    );
+}
+
+.modal-panel[open] {
+  animation: modal-in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.modal-panel[open]::backdrop {
+  animation: backdrop-in 0.28s ease-out;
+}
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+}
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .modal-panel[open],
+  .modal-panel[open]::backdrop {
+    animation: none;
+  }
+}
